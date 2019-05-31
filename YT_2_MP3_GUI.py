@@ -1,13 +1,24 @@
 import tkinter as tk
+from tkinter import messagebox
 import subprocess
 
 def yt_dl_mp3():
+    if e1.get() == '':
+        messagebox.showinfo("Wooops", 
+                "You need to put a link in first")
+        return
+
     subprocess.call(["youtube-dl", 
                     "--extract-audio",
                     "--audio-format",
                     "mp3",
                     e1.get()])
 def yt_dl_mp4():
+    if e1.get() == '':
+        messagebox.showinfo("Wooops", 
+                "You need to put a link in first")
+        return
+
     subprocess.call(["youtube-dl", 
                     e1.get()])
 
